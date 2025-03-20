@@ -2272,3 +2272,30 @@ button,
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
+	
+/* تحسين الانتقالات */
+body.dark-mode #sidebar,
+body.dark-mode #menu,
+body.dark-mode .box,
+body.dark-mode table,
+body.dark-mode input:not([type="submit"]):not([type="reset"]):not([type="button"]),
+body.dark-mode textarea,
+body.dark-mode select {
+    background-color: #2d2d2d !important;
+    border-color: #444 !important;
+}
+
+body.dark-mode .button:not(.primary) {
+    box-shadow: inset 0 0 0 2px #666 !important;
+    color: #fff !important;
+}
+
+/* تأثيرات الانتقال بين الصفحات */
+#wrapper {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
