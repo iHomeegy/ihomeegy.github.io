@@ -1,16 +1,63 @@
 <!DOCTYPE HTML>
-<!--
-	
--->
 <html>
 	<head>
 		<title>iHomeegy Smart System - Documentation</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+        
+		<style>
+			body {
+				transition: all 0.4s ease-in-out !important;
+			}
+			
+			body.dark-mode {
+				background-color: #111111 !important;
+				color: #ffffff !important;
+			}
+
+			body.dark-mode *:not(input):not(textarea) {
+				color: #ffffff !important;
+				text-shadow: none !important;
+			}
+
+			body.dark-mode #sidebar,
+			body.dark-mode #menu,
+			body.dark-mode .button,
+			body.dark-mode .actions .button {
+				background-color: #2d2d2d !important;
+				border-color: #444444 !important;
+			}
+
+			body.dark-mode #search {
+				background-color: #2d2d2d !important;
+				border: 1px solid #444444 !important;
+			}
+
+			body.dark-mode #search input[type="text"] {
+				background-color: #3a3a3a !important;
+				color: #ffffff !important;
+			}
+
+			body.dark-mode a,
+			body.dark-mode .icon,
+			body.dark-mode h1,
+			body.dark-mode h2,
+			body.dark-mode h3 {
+				color: inherit !important;
+			}
+			
+		</style>
 	</head>
 	<body class="is-preload">
-
+		<script>
+			(function() {
+				const savedTheme = localStorage.getItem('theme');
+				if (savedTheme === 'dark') {
+					document.body.classList.add('dark-mode');
+				}
+			})();
+		</script>
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -18,13 +65,17 @@
 					<div id="main">
 						<div class="inner">
 
-							<!-- Header -->
-								<header id="header">
-									<a href="index.html" class="logo"><strong>iHomeegy</strong> Smart System</a>
-									<ul class="icons">
-										<li><a href="https://www.facebook.com/ihomeegy.smart" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									</ul>
-								</header>
+							<!-- Modified Header with Dark Mode Toggle -->
+							<header id="header">
+								<a href="index.html" class="logo"><strong>iHomeegy</strong> Smart System</a>
+								<ul class="icons">
+									<!-- Added Dark Mode Toggle -->
+									<li>
+										<span class="icon solid fa-moon" id="darkModeToggle" onclick="toggleDarkMode()"></span>
+									</li>
+									<li><a href="https://www.facebook.com/ihomeegy.smart" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+								</ul>
+							</header>
 
 							<!-- Banner -->
 								<section id="banner">
@@ -32,11 +83,15 @@
 										<header>
 											<h1>iHomeegy Smart<br />
 											System Documentation</h1>
-											<p>A free and fully responsive site template</p>
+											<p>Your Home, Smarter by Design.</p>
 										</header>
-										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
+										<p>In the era of advanced technology, modern automation platforms revolutionize living spaces by seamlessly integrating thousands of devices—lights, thermostats, cameras, locks, and more—into a unified interface. This system empowers users to control every aspect of their environment through a single app, eliminating the need for fragmented tools. By prioritizing local processing over cloud dependency, it ensures robust data privacy and minimizes vulnerability to external breaches. Users can craft intelligent routines that adapt to their lifestyles, such as automatically dimming lights when a room is vacant or adjusting temperatures based on real-time weather forecasts.
+
+										Customizable dashboards sit at the heart of the experience, allowing individuals to design control panels with drag-and-drop widgets, live camera feeds, or energy consumption graphs. Advanced energy analytics help reduce utility bills by identifying power-hungry devices, while built-in privacy protocols guarantee that sensitive data never leaves the local network. Voice commands and gesture controls offer hands-free operation, complemented by seamless compatibility with popular virtual assistants.
+
+										The platform delivers instant alerts for unusual activity—whether it’s unexpected motion, water leaks, or air quality drops—enhancing both security and peace of mind. Support for Zigbee, Z-Wave, and Wi-Fi protocols ensures effortless scalability, adapting to spaces ranging from compact apartments to sprawling estates. A thriving community contributes templates, plugins, and troubleshooting guides, fostering endless customization. With multi-user access and role-based permissions, households can tailor access for family members, guests, or technicians. Ultimately, this ecosystem blends cutting-edge innovation with simplicity, transforming homes into responsive, intuitive sanctuaries.</p>
 										<ul class="actions">
-											<li><a href="#" class="button big">Learn More</a></li>
+											<!--  <li><a href="#" class="button big">Learn More</a></li> -->
 										</ul>
 									</div>
 									<span class="image object">
@@ -47,35 +102,35 @@
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>Erat lacinia</h2>
+										<h2>Features</h2>
 									</header>
 									<div class="features">
 										<article>
-											<span class="icon fa-gem"></span>
+											<span class="icon solid fa-puzzle-piece"></span>
 											<div class="content">
-												<h3>Portitor ullamcorper</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+												<h3>Universal Device Integration</h3>
+												<p>Connect and control 1000+ devices (lights, thermostats, cameras) from a single interface.</p>
 											</div>
 										</article>
 										<article>
-											<span class="icon solid fa-paper-plane"></span>
+											<span class="icon solid fa-th"></span>
 											<div class="content">
-												<h3>Sapien veroeros</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+												<h3>Customizable Dashboards</h3>
+												<p>Design personalized control panels with drag-and-drop widgets.</p>
 											</div>
 										</article>
 										<article>
-											<span class="icon solid fa-rocket"></span>
+											<span class="icon solid fa-brain"></span>
 											<div class="content">
-												<h3>Quam lorem ipsum</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+												<h3>AI-Powered Automation</h3>
+												<p>Create routines that adapt to your habits (e.g., lights dim at sunset, AC adjusts to weather).</p>
 											</div>
 										</article>
 										<article>
-											<span class="icon solid fa-signal"></span>
+											<span class="icon solid fa-user-shield"></span>
 											<div class="content">
-												<h3>Sed magna finibus</h3>
-												<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+												<h3>Privacy-First Architecture</h3>
+												<p>Local processing ensures data never leaves your network.</p>
 											</div>
 										</article>
 									</div>
@@ -84,53 +139,53 @@
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>Ipsum sed dolor</h2>
+										<h2>User Interface (UI)</h2>
 									</header>
 									<div class="posts">
 										<article>
 											<a href="#" class="image"><img src="images/pic01.png" alt="" /></a>
-											<h3>Interdum aenean</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<h3>Smart Overview</h3>
+											<p>The interface provides a comprehensive overview of smart home management, allowing users to monitor and control various devices such as lights, temperature, and more. With options to activate or deactivate all devices at once, it offers convenience and efficiency. The system also supports automation, scenes, and scheduling, enabling a seamless and personalized smart home experience.</p>
 											<ul class="actions">
 												<li><a href="#" class="button">More</a></li>
 											</ul>
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/pic02.png" alt="" /></a>
-											<h3>Nulla amet dolore</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<h3>Central Control</h3>
+											<p>The interface serves as the central hub for managing all smart devices supported by iHomeegy, including loads, sensors, RGB lighting, and shutters. It provides real-time status updates for each device, ensuring users have full control over their smart home environment. The dashboard is fully customizable, allowing users to tailor the layout and add their preferred smart devices for a personalized experience.</p>
 											<ul class="actions">
 												<li><a href="#" class="button">More</a></li>
 											</ul>
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/pic03.png" alt="" /></a>
-											<h3>Tempus ullamcorper</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<h3>Interactive Customization</h3>
+											<p>The application allows users to enhance their experience by adding real-life images or floor plans that reflect the actual rooms being controlled. Users can also customize the icons within the dashboard to match their preferences, ensuring a personalized and visually appealing layout. With a simple slide gesture, users can seamlessly navigate between different rooms, accessing and managing each space effortlessly.</p>
 											<ul class="actions">
 												<li><a href="#" class="button">More</a></li>
 											</ul>
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/pic04.png" alt="" /></a>
-											<h3>Sed etiam facilis</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<h3>Widget Control</h3>
+											<p>The application offers a convenient widget feature, allowing users to add and manage their loads directly on the main interface. This enables effortless control and real-time monitoring of all connected devices. With just a few taps, users can turn devices on or off, ensuring a seamless smart home experience.</p>
 											<ul class="actions">
 												<li><a href="#" class="button">More</a></li>
 											</ul>
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/pic05.png" alt="" /></a>
-											<h3>Feugiat lorem aenean</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<h3>Quick Access</h3>
+											<p>The popup menu provides a swift and intuitive way to control each room directly from the main interface. By tapping the icons at the bottom, users can open a transparent, stylish popup that offers seamless control over devices. This design ensures a smooth and visually appealing experience for managing your smart home.</p>
 											<ul class="actions">
 												<li><a href="#" class="button">More</a></li>
 											</ul>
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/pic06.png" alt="" /></a>
-											<h3>Amet varius aliquam</h3>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<h3>Device info</h3>
+											<p>The interface provides comprehensive information about the smart device, including its brand (iHomeegy), model, and technical specifications. It also displays real-time data like WiFi signal strength. This detailed overview ensures users have full visibility and control over their smart home equipment.</p>
 											<ul class="actions">
 												<li><a href="#" class="button">More</a></li>
 											</ul>
@@ -159,51 +214,51 @@
 									</header>
 									<ul>
 										<li><a href="index.html">Homepage</a></li>
-										<li><a href="generic.html">Generic</a></li>
-										<li><a href="elements.html">Elements</a></li>
+										<li><a href="generic.html">Dashboard</a></li>
+										<li><a href="elements.html">Devices</a></li>
 										<li>
-											<span class="opener">Submenu</span>
+											<span class="opener">Automation</span>
 											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
+												<li><a href="#">page 1</a></li>
+												<li><a href="#">page 2</a></li>
+												<li><a href="#">page 3</a></li>
+												<li><a href="#">page 4</a></li>
 											</ul>
 										</li>
-										<li><a href="#">Etiam Dolore</a></li>
-										<li><a href="#">Adipiscing</a></li>
+										<li><a href="#">Schedules</a></li>
+										<!-- <li><a href="#">Settings</a></li> -->
 										<li>
-											<span class="opener">Another Submenu</span>
+											<span class="opener">Settings</span>
 											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
+												<li><a href="#">page 1</a></li>
+												<li><a href="#">page 2</a></li>
+												<li><a href="#">page 3</a></li>
+												<li><a href="#">page 4</a></li>
 											</ul>
 										</li>
-										<li><a href="#">Maximus Erat</a></li>
-										<li><a href="#">Sapien Mauris</a></li>
-										<li><a href="#">Amet Lacinia</a></li>
+										<!-- <li><a href="#">Maximus Erat</a></li> -->
+										<!-- <li><a href="#">Sapien Mauris</a></li> -->
+										<!-- <li><a href="#">Amet Lacinia</a></li> -->
 									</ul>
 								</nav>
 
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>Ante interdum</h2>
+										<h2></h2>
 									</header>
 									<div class="mini-posts">
 										<article>
 											<a href="#" class="image"><img src="images/pic07.png" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+											<p>The dashboard centralizes control of smart devices, displaying active/inactive automations, logs, and room-specific settings like "Kitch" and "Gard".</p>
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/pic08.png" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+											<p>The interface visualizes real-time and historical data through dynamic graphs.</p>
 										</article>
 										<article>
 											<a href="#" class="image"><img src="images/pic09.png" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+											<p>The interface enables precise adjustment of smart rolling shutters, displaying real-time status.</p>
 										</article>
 									</div>
 									<ul class="actions">
@@ -216,18 +271,18 @@
 									<header class="major">
 										<h2>Get in touch</h2>
 									</header>
-									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+									<p>iHomeegy offers innovative smart home solutions designed to enhance your living experience with seamless automation and control. For more information, follow us on Facebook: iHomeegy Smart.</p>
 									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-										<li class="icon solid fa-phone">(000) 000-0000</li>
-										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>
+										<li class="icon solid fa-envelope"><a href="#">ihomeegysmart@gmail.com</a></li>
+										<li class="icon solid fa-phone">(+20)11 59651389</li>
+										<li class="icon solid fa-home">Egypt<br />
+										</li>
 									</ul>
 								</section>
 
 							<!-- Footer -->
 								<footer id="footer">
-									<p class="copyright">&copy; All rights reserved. iHomeegy: <a href=""></a>. Design: <a href="">iHomeegy</a>.</p>
+									<p class="copyright">&copy; All rights reserved. iHomeegy</p>
 								</footer>
 
 						</div>
@@ -236,11 +291,35 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
+		<!-- Dark Mode Script -->
+		<script>
+			function toggleDarkMode() {
+				const isDark = document.body.classList.toggle('dark-mode');
+				const icon = document.getElementById('darkModeToggle');
+				
+				icon.classList.toggle('fa-moon', !isDark);
+				icon.classList.toggle('fa-sun', isDark);
+				
+				localStorage.setItem('theme', isDark ? 'dark' : 'light');
+			}
+
+			// تحديث الأيقونة بعد التحميل
+			document.addEventListener('DOMContentLoaded', () => {
+				const savedTheme = localStorage.getItem('theme');
+				const icon = document.getElementById('darkModeToggle');
+				
+				if (savedTheme === 'dark') {
+					icon.classList.replace('fa-moon', 'fa-sun');
+				} else {
+					icon.classList.replace('fa-sun', 'fa-moon');
+				}
+			});
+		</script>
 	</body>
 </html>
